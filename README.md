@@ -19,3 +19,10 @@ See [issue #6831](https://github.com/api-platform/core/issues/6831)
 6. Try the greetings endpoint, setting `name` to an empty string `""`.
 7. See the 422 response and validation error.
 8. Immediately try to send a request to the auth endpoint and see it fail with a 404 response.
+9. `docker compose down` and modify `config/packages/api_platform.yaml`. Change the line as follows:
+   ```yaml
+   formats:
+       json: ['application/json', 'application/problem+json']
+   ```
+10. Repeat from step 2, see the problem in step 8 is resolved.
+
